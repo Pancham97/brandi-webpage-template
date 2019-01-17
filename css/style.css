@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+/*
+html {
+  scroll-behavior: smooth;
+}
+*/
+
 a {
   text-decoration: none;
 }
@@ -17,14 +23,20 @@ img {
   max-height: 100%;
 }
 
-nav {
-  z-index: 10;
-  position: relative;
+.nav {
+  position: fixed;
   top: 0;
-  background: #00695C;
+  z-index: 10;
+  width: 100%;
+}
+
+nav {
+  
+  
+  background: rgba(7, 43, 50, 0.4);
   width: 100%;
   /*  height: 50px;*/
-  margin: 0px;
+/*  margin: 0px;*/
   padding: 0px;
   display: flex;
   justify-content: center;
@@ -68,16 +80,46 @@ nav a {
 
 .nav-links a {
   color: #ffffff;
+  cursor: pointer;
+  transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
 }
 
-.nav-links .active {
+.nav-links a:hover {
+  background: #009688;
+}
+
+.nav-links .active-nav-link {
   padding-top: 14px;
   border-top: 2px solid #29B6F6;
 }
 
 .icon {
   display: none;
+  cursor: pointer;
   color: #ffffff;
+}
+
+.bar-1, .bar-2, .bar-3 {
+  width: 30px;
+  height: 2px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transition: 0.2s;
+}
+
+.change .bar-1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-5px, 3px);
+}
+
+.change .bar-2 {opacity: 0;}
+
+.change .bar-3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -7px);
 }
 
 
@@ -340,6 +382,16 @@ div.dribble:hover {
   letter-spacing: 0.5px;
 }
 
+.svg-alignment {
+  display: inline-flex;
+  align-items: center;
+}
+
+.svg-alignment img {
+  width: auto;
+  height: auto;
+}
+
 .features-content {
   display: inline;
 }
@@ -372,6 +424,99 @@ div.dribble:hover {
   font-size: .75em;
   color: #37474F;
 }
+
+/*Features end.*/
+
+/*Works start*/
+.works {
+  margin: 0;
+  padding: 50px 0 70px 0;
+}
+
+.works-info {
+  text-align: center;
+}
+
+.works-info .container {
+  width: 80%;
+  margin: auto;
+}
+
+.works-info span {
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+.works-filter #selection {
+  padding: 40px 0;
+  text-align: center;
+  /*  margin: auto;*/
+}
+
+.filter-button {
+  cursor: pointer;
+  border: none;
+  background-color: #ffffff;
+  font-weight: bold;
+  font-size: .75em;
+  padding: 5px 15px;
+  
+  transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+}
+
+.filter-button:hover {
+  color: #ffffff;
+  background: #1f987c;
+  border-radius: 5px;
+}
+
+.active-filter-button {
+  color: #ffffff;
+  background: #1f987c;
+  border-radius: 5px;
+}
+
+.active-filter-button:focus {
+  outline: none;
+}
+
+.works-pictures {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.works-pictures .column {
+  flex: 25%;
+  padding: 0;
+  display: none;
+}
+
+.works-pictures .column img {
+  margin: 0;
+  vertical-align: middle;
+}
+
+.works-filter:after {
+  content: "";
+  display: flex;
+  justify-content: center;
+}
+
+.works-filter .show {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+
+
+/*Works end*/
+
+/*Footer.*/
 
 footer {
   border-top: 5px solid #000000;
@@ -536,8 +681,17 @@ footer .footer-links ul li {
   }
 
   .feature-block {
+    text-align: center;
     padding: 10px 0;
+    display: block;
+    margin: auto;
   }
+  
+  .feature-image {
+    margin: 0;
+    padding: 0;
+  }
+
 
   footer .container {
     display: block;
@@ -610,6 +764,12 @@ footer .footer-links ul li {
     font-size: 1rem;
   }
 
+  .works-pictures .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+
   footer .container {
     display: block;
     width: 90%;
@@ -650,18 +810,19 @@ footer .footer-links ul li {
     display: block !important;
     text-align: left;
   }
+  
 
   .text .welcome-text {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .text .brand {
     font-weight: bold;
   }
-
+  
   .text .tag-text {
     line-height: 40px;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .text .tag-text span {
@@ -674,6 +835,16 @@ footer .footer-links ul li {
 
   .text .bottom-text span {
     font-size: 0.75rem;
+  }
+
+  .works-pictures .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .works-pictures .column img {
+    width: 100%;
   }
 
 }

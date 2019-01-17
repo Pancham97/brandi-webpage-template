@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Filter for photos</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .photo {
+            float: left;
+            width: 360px;
+            padding: 10px;
+            display: none;
+        }
+        
+        .photo img {
+            width: 100%;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        .filter-button {
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            background-color: #ffffff;
+        }
+        
+        .active {
+            color: #ffffff;
+            background: #444444;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+
+        <div id="selection">
+          <button class="btn" id="" value="all">All</button>
+          <button class="btn" value="summer">Summer</button>
+          <button class="btn" value="rainy">Rainy</button>
+          <button class="btn" value="winter">Winter</button>
+        </div>
+
+        <div class="photo summer">
+            <img src="images/assignment_2/summer-1.jpg" class="photograph" alt="summer">
+        </div>
+
+        <div class="photo winter">
+            <img src="images/assignment_2/winter-1.jpg" class="photograph " alt="winter">
+        </div>
+
+        <div class="photo rainy">
+            <img src="images/assignment_2/monsoon-1.jpg" class="photograph " alt="rainy">
+        </div>
+
+        <div class="photo winter">
+            <img src="images/assignment_2/winter-2.jpg" class="photograph " alt="winter">
+        </div>
+
+        <div class="photo summer">
+            <img src="images/assignment_2/summer-2.jpg" class="photograph " alt="summer">
+        </div>
+
+        <div class="photo rainy">
+            <img src="images/assignment_2/monsoon-2.jpg" class="photograph " alt="rainy">
+        </div>
+    </div>
+
+    <script>
+        function filter(nameOfFilter) {
+//          let  = eventName.target.value;
+          console.log(nameOfFilter);
+          let filterName = nameOfFilter;
+            var photoElement, i;
+            photoElements = document.getElementsByClassName("photo");
+
+            if (filterName === 'all') {
+                filterName = "";
+            }
+
+            for (i = 0; i < photoElements.length; i++) {
+                removeClass(photoElements[i], "show");
+                if (photoElements[i].className.indexOf(filterName) > -1) {
+                    addClass(photoElements[i], "show");
+                }
+
+            }
+        }
+
+        function removeClass(elementName, nameOfClass) {
+            var i, arrayOfElementClassNames, arrayOfClass;
+            arrayOfElementClassNames = elementName.className.split(" ");
+            arrayOfClass = nameOfClass.split(" ");
+
+            for (i = 0; i < arrayOfClass.length; i++) {
+                while (arrayOfElementClassNames.indexOf(arrayOfClass[i]) > -1) {
+                    arrayOfElementClassNames.splice(arrayOfElementClassNames.indexOf(arrayOfClass[i]), 1);
+                }
+            }
+            elementName.className = arrayOfElementClassNames.join(" ");
+        }
+
+        function addClass(elementName, nameOfClass) {
+            var i, arrayOfElementClassNames, arrayOfClass;
+            arrayOfElementClassNames = elementName.className.split(" ");
+            arrayOfClass = nameOfClass.split(" ");
+
+            for (i = 0; i < arrayOfClass.length; i++) {
+                if (arrayOfElementClassNames.indexOf(arrayOfClass[i]) === -1) {
+                    elementName.className += " " + arrayOfClass[i];
+                }
+            }
+        }
+
+        filter("all");
+      
+      var buttons = document.getElementsByClassName('btn');
+      for(button of buttons) {
+        console.log(button);
+        button.addEventListener('click', event => filter(event.target.value));
+      }
+
+//        function filterFunction() {
+//            var optionValue = this.value;
+//
+//            filter(optionValue);
+//        }
+    </script>
+</body>
+
+</html>

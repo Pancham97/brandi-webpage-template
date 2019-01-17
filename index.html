@@ -11,8 +11,8 @@
 <body>
 
   <!--  Navigation bar-->
-  <div>
-    <nav id="navbar" class="nav">
+  <div class="row nav">
+    <nav id="navbar">
       <div class="container">
         <div class="navbar-brand">
           <a href="#"><img src="images/logo.png" alt="company logo"></a>
@@ -22,14 +22,18 @@
           </a>
         </div>
 
-        <a href="javascript:void(0);" id="icon" class="icon"><i class="fas fa-bars"></i></a>
+        <div id="icon" class="icon">
+          <div class="bar-1"></div>
+          <div class="bar-2"></div>
+          <div class="bar-3"></div>
+        </div>
 
         <div class="nav-links" id="nav-links">
-          <a href="#" class="active">Home</a>
-          <a href="#">Features</a>
-          <a href="#">Works</a>
-          <a href="#">Team</a>
-          <a href="#">Contact</a>
+          <a data-target="#" class="nav-link active-nav-link">Home</a>
+          <a data-target="#features" class="nav-link">Features</a>
+          <a data-target="#work" class="nav-link">Works</a>
+          <a data-target="#work" class="nav-link">Team</a>
+          <a data-target="#footer" class="nav-link">Contact</a>
         </div>
       </div>
     </nav>
@@ -129,19 +133,19 @@
 
 
   <!--  Features start here.-->
-  <div class="row features">
+  <div class="row features" id="features">
     <div class="title">
       <div>
         <span>Features</span>
       </div>
 
-      <div>
+      <div class="svg-alignment">
         <svg height="4" width="200" viewbox="0 0 180 4">
-          <line x1="100" y1="0" x2="180" y2="0" style="stroke:#dddddd; stroke-width:2" />
+          <line x1="100" y1="2" x2="180" y2="2" style="stroke:#dddddd; stroke-width:2" />
         </svg>
         <img src="images/sprite1.png" alt="heart">
         <svg height="4" width="200" viewbox="0 0 180 4">
-          <line x1="0" y1="0" x2="80" y2="0" style="stroke:#dddddd; stroke-width:2" />
+          <line x1="0" y1="2" x2="80" y2="2" style="stroke:#dddddd; stroke-width:2" />
         </svg>
       </div>
     </div>
@@ -199,8 +203,65 @@
 
   <!--  Features end here.-->
 
+  <!--  Works start here.-->
+  <div class="row works" id="work">
+    <div class="title">
+      <div>
+        <span>Works</span>
+      </div>
+
+      <div class="svg-alignment">
+        <svg height="4" width="200" viewbox="0 0 180 4">
+          <line x1="100" y1="2" x2="180" y2="2" style="stroke:#dddddd; stroke-width:2" />
+        </svg>
+        <img src="images/sprite1.png" alt="heart">
+        <svg height="4" width="200" viewbox="0 0 180 4">
+          <line x1="0" y1="2" x2="80" y2="2" style="stroke:#dddddd; stroke-width:2" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="works-info">
+      <div class="container">
+        <span>lorem ipsum Hey, Doc, we better back up, we don't have enough roads to get up to 88. Roads? Where we're going we don't need roads. (Doc pulls down his glasses.)</span>
+      </div>
+    </div>
+
+    <div class="works-filter">
+      <div id="selection">
+        <button class="filter-button active-filter-button" value="all">All</button>
+        <button class="filter-button" value="branding">Branding</button>
+        <button class="filter-button" value="web">Web</button>
+        <button class="filter-button" value="logo">Logo Design</button>
+        <button class="filter-button" value="photography">Photography</button>
+      </div>
+
+      <div class="works-pictures">
+        <div class="column branding">
+          <img src="images/work-1.jpg" class="photograph" alt="summer">
+          <img src="images/work-5.jpg" class="photograph " alt="summer">
+        </div>
+
+        <div class="column web">
+          <img src="images/work-2.jpg" class="photograph" alt="summer">
+          <img src="images/work-6.jpg" class="photograph " alt="summer">
+        </div>
+
+        <div class="column logo">
+          <img src="images/work-3.jpg" class="photograph" alt="summer">
+          <img src="images/work-7.jpg" class="photograph " alt="summer">
+        </div>
+
+        <div class="column photography">
+          <img src="images/work-4.jpg" class="photograph" alt="summer">
+          <img src="images/work-8.jpg" class="photograph " alt="summer">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!--  Footer starts.-->
-  <footer>
+  <footer id="footer">
     <div class="container">
       <div class="footer-block">
         <div class="company-logo">
