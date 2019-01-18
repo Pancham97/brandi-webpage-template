@@ -488,9 +488,10 @@ div.dribble:hover {
 }
 
 .works-pictures {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   padding: 0;
+  justify-content: center;
 }
 
 .works-pictures .column {
