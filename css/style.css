@@ -391,7 +391,7 @@ div.dribble:hover {
   cursor: pointer;
   font-size: .75em;
   font-weight: bold;
-  padding: 5px 15px;
+  padding: 5px 10px;
   transition: 0.2s;
 }
 
@@ -819,8 +819,8 @@ footer .footer-links ul li {
   }
 
   .works-pictures .column {
-    -ms-flex: 100%;
-    flex: 100%;
+    -ms-flex: 50%;
+    flex: 50%;
     max-width: 100%;
   }
 
