@@ -13,16 +13,8 @@ body {
 }
 
 img {
-  max-height: 100%;
-  max-width: 100%;
   width: 100%;
-}
-
-.nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
+  height: inherit;
 }
 
 nav {
@@ -31,7 +23,10 @@ nav {
   display: flex;
   justify-content: center;
   padding: 0;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 10;
 }
 
 .container {
@@ -62,10 +57,6 @@ nav .container :nth-child(1) {
 nav a {
   padding: 10px;
   text-decoration: none;
-}
-
-.nav-links {
-  display: block;
 }
 
 .nav-links a {
@@ -270,7 +261,6 @@ div.dribble:hover {
 }
 
 .carousel .active {
-  display: block;
   opacity: 1;
   z-index: 2;
 }
@@ -283,7 +273,7 @@ div.dribble:hover {
   width: 100%;
 }
 
-.carousel-controls .dot {
+.carousel-controls .pagination-item {
   background-color: #444444;
   border: 1px solid #444444;
   cursor: pointer;
@@ -432,7 +422,6 @@ div.dribble:hover {
 
 .works-pictures .column img {
   backface-visibility: hidden;
-  display: block;
   height: auto;
   margin: 0;
   max-width: 100%;
@@ -480,13 +469,11 @@ div.dribble:hover {
 }
 
 .works-pictures .column .hover-content .content-info .image {
-  display: block;
   margin: auto;
   padding: 10px;
 }
 
 .works-pictures .column .hover-content .content-info .image img {
-  display: block;
   margin: auto;
   width: auto;
 }
@@ -561,7 +548,6 @@ footer .search input {
   border-radius: 4px;
   border: 1.5px solid #ffffff;
   box-sizing: border-box;
-  display: block;
   padding: 10px;
   width: 100%;
 }
@@ -797,6 +783,14 @@ footer .footer-links ul li {
     display: block;
     float: none;
     text-align: left;
+  }
+
+  .carousel {
+    height: 400px;
+  }
+
+  .slide {
+    height: inherit;
   }
 
   .text .welcome-text {
