@@ -37,8 +37,7 @@ nav {
 .container {
   align-items: center;
   display: flex;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 0 100px;
   width: 100%;
 }
 
@@ -160,7 +159,6 @@ nav a {
   padding: 8px 12px;
   position: absolute;
   text-align: center;
-  text-align: center;
   width: 100%;
 }
 
@@ -206,54 +204,41 @@ nav a {
   justify-content: center;
   margin: 5px;
   transition: all 0.2s;
+  background-repeat: no-repeat;
+  padding: 10px;
 }
 
 .twitter {
   background-image: url('../images/twitter_hover.png');
-  background-repeat: no-repeat;
-  padding: 10px;
+  
 }
 
 div.twitter:hover {
   background-image: url('../images/twitter.png');
-  background-repeat: no-repeat;
-  padding: 10px;
 }
 
 .social-links .facebook {
   background-image: url('../images/fb_hover.png');
-  background-repeat: no-repeat;
-  padding: 10px;
 }
 
 div.facebook:hover {
   background-image: url('../images/fb.png');
-  background-repeat: no-repeat;
-  padding: 10px;
 }
 
 .social-links .google {
   background-image: url('../images/google_hover.png');
-  background-repeat: no-repeat;
-  padding: 10px;
 }
 
 div.google:hover {
   background-image: url('../images/google.png');
-  background-repeat: no-repeat;
-  padding: 10px;
 }
 
 .social-links .dribble {
   background-image: url('../images/dribble_hover.png');
-  background-repeat: no-repeat;
-  padding: 10px;
 }
 
 div.dribble:hover {
   background-image: url('../images/dribble.png');
-  background-repeat: no-repeat;
-  padding: 10px;
 }
 
 #prev-button, #next-button {
@@ -276,16 +261,12 @@ div.dribble:hover {
   left: 10px;
 }
 
-#prev-button:hover {
+#prev-button:hover, #next-button:hover {
   box-shadow: 0 0 10px #000000;
 }
 
 #next-button {
   right: 10px;
-}
-
-#next-button:hover {
-  box-shadow: 0 0 10px #000000;
 }
 
 .carousel .active {
@@ -356,11 +337,6 @@ div.dribble:hover {
   width: auto;
 }
 
-.features-content {
-  display: inline;
-}
-
-
 .feature-block {
   display: inline-flex;
   flex: 1;
@@ -429,13 +405,7 @@ div.dribble:hover {
   transition: 0.2s;
 }
 
-.filter-button:hover {
-  background: #1f987c;
-  border-radius: 5px;
-  color: #ffffff;
-}
-
-.active-filter-button {
+.filter-button:hover, .active-filter-button {
   background: #1f987c;
   border-radius: 5px;
   color: #ffffff;
@@ -517,8 +487,7 @@ div.dribble:hover {
 
 .works-pictures .column .hover-content .content-info .image img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   width: auto;
 }
 
@@ -735,8 +704,7 @@ footer .footer-links ul li {
   .container {
     align-items: center;
     display: flex;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 0 30px;
     width: 100%;
   }
 
@@ -749,7 +717,6 @@ footer .footer-links ul li {
   }
 
   .responsive {
-    /*    right: 100px;*/
     display: block;
     position: absolute;
     top: 50px;
@@ -806,8 +773,7 @@ footer .footer-links ul li {
     align-items: center;
     display: flex;
     margin-right: 40px;
-    padding-left: 5px ;
-    padding-right: 5px ;
+    padding: 0 5px ;
     width: 100%;
   }
 
